@@ -97,8 +97,6 @@ run_example('velocity_to_thickness_main.m')
 
 This project is licensed under the BSD-3-Clause license.
 
-## Changelog
-
 ## Contact Information
 
 - Author: Xiaoguang Pang
