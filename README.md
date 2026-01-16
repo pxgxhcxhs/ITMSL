@@ -102,3 +102,4 @@ This project is licensed under the BSD-3-Clause license.
 - Author: Xiaoguang Pang
 - Email: pangxg@haut.edu.cn
 - Project Homepage: https://github.com/pxgxhcxhs/ITMSL
+- https://doi.org/10.5281/zenodo.18267363
