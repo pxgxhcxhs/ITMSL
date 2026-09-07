@@ -13,8 +13,9 @@ p_i = 900; %density of ice  kg/m^3
 g = 9.8; %gravity m/s^2
 slope_minimum_threhsold = 4;
 slope_uncertainties = 5;
-B = 465; %ice cerrp parameter 1/(MPa^3*yr)
+B = 700; %ice cerrp parameter 1/(MPa^3*yr)
 cc = 0.852;
+k_effect = 0.9; %the effective pressure as 0.9 times the ice overburden pressure
 
 %% Step 2: Load the ice, topography, and velocity, temperature
 %Load full dem
@@ -69,7 +70,6 @@ basal_slope = gradient8(dem_basal,'deg');
 C = cc*nanmax(nanmax(sind(basal_slope.Z)));
 
 %%% effective pressure
-k_effect = cal_effect_k(dem_basal,shape_factor,dem_glacier,glacier_mask);
 effective_pressure = k_effect*p_i*g.*Gantayat14_ice_thickness;
 
 %%% basal sliding
@@ -114,7 +114,6 @@ while abs(diff_ice_thickness)>0.1
     basal_shear_stress = shape_factor*p_i*g*sind(dem_slope.Z).*Gantayat14_ice_thickness;
 
     %%% effective pressure
-    k_effect = cal_effect_k(dem_basal,shape_factor,dem_glacier,glacier_mask);
     effective_pressure = k_effect*p_i*g.*Gantayat14_ice_thickness; %%% Pa
 
     %%% basal sliding

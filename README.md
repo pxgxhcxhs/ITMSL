@@ -3,6 +3,13 @@
 ## Model Overview
 This model is built upon the combined framework of laminar flow theory and glacier basal sliding laws to invert glacier thickness. Developed in MATLAB, it takes glacier surface DEM, surface velocity, and glacier inventory data as inputs to compute the internal thickness distribution of glaciers.
 
+### Model Assumptions
+In the current version, the effective pressure (N) at the glacier bed is assumed to be 90% of the ice overburden pressure, i.e.,
+  
+N = 0.9 · ρ · g · H · cosα
+  
+where ρ is ice density (≈ 900kg ·m⁻³), g is gravitational acceleration (9.81m · s⁻²), and H is the local ice thickness. This simplification accounts for basal water pressure effects in the sliding law and is the key update from previous releases.
+
 ### Software Environment
 - MATLAB R2018a or higher
 - Required MATLAB Toolboxes:
@@ -102,4 +109,3 @@ This project is licensed under the BSD-3-Clause license.
 - Author: Xiaoguang Pang
 - Email: pangxg@haut.edu.cn
 - Project Homepage: https://github.com/pxgxhcxhs/ITMSL
-- Zenodo: https://doi.org/10.5281/zenodo.18267363
